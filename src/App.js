@@ -1,7 +1,7 @@
 import { useState,useEffect } from 'react';
 import { GoogleMap, Marker,withGoogleMap ,withScriptjs,GoogleApiWrapper} from "react-google-maps"
 import './App.css';
-
+import config from "./MOCK_DATA.json"
 function App() {
 
 const [data,setData] =useState([])
@@ -20,7 +20,7 @@ useEffect(()=>{
 
 },[])
  
-      console.log(data)     
+      console.log(config)     
   return (
     <>
     <div className="rest1">
@@ -30,14 +30,20 @@ useEffect(()=>{
     <div>
        {
          
-         data.map((e,index)=>{
+         config.map((e,index)=>{
           
         return (   <div key={index} className="rest">
           
             
            <h1 >Restaurant Name: {e.restaurantName}{"  "}{e.last_name}</h1>
            <p>Location: Latitude - {e.address} {" "} {"  "}   longitude  {e.location}</p>
-           
+           <div class="mapouter">
+           <div class="gmap_canvas">
+           <iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=University of Oxford&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+ 
+           </div>
+
+           </div>
            </div>
         )
          })
