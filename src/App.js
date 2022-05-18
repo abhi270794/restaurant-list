@@ -23,6 +23,11 @@ useEffect(()=>{
       console.log(config)     
   return (
     <>
+    <div class="mapouter">
+    <div class="gmap_canvas">
+    <iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=University of Oxford&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+    </div>
+</div>
     <div className="rest1">
     <h1 >Name of restaurant with location</h1>
     
@@ -37,11 +42,7 @@ useEffect(()=>{
             
            <h1 >Restaurant Name: {e.restaurantName}{"  "}{e.last_name}</h1>
            <p>Location: Latitude - {e.address} {" "} {"  "}   longitude  {e.location}</p>
-           <div class="mapouter">
-           <div class="gmap_canvas">
-           <iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=University of Oxford&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
-           </div>
-</div>
+         
            </div>
         )
          })
